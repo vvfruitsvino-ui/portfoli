@@ -39,17 +39,17 @@
             gap: 1.2rem;
         }
         
-        /* Logo Placeholder Styling */
+        /* Logo Placeholder Styling (80% bigger: 70px -> 126px) */
         .logo {
-            width: 70px;
-            height: 70px;
+            width: 126px;
+            height: 126px;
             background-color: #16a34a;
             border: 3px solid #4ade80;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
@@ -60,9 +60,10 @@
             color: #ffffff;
             line-height: 1.2;
         }
-        .brand-text p {
+        .brand-text p, .brand-text h2, .brand-text h3 {
             font-size: 0.95rem;
             color: #ddd6fe;
+            font-weight: normal;
         }
 
         /* Main Container */
@@ -102,19 +103,27 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
             transition: transform 0.2s, box-shadow 0.2s;
             border: 1px solid #e9d5ff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         .card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 18px rgba(76, 29, 149, 0.15);
         }
+        /* No Background Image Blend */
         .card img {
             width: 100%;
             height: 180px;
-            object-fit: cover;
+            object-fit: contain;
+            background: transparent;
+            mix-blend-mode: multiply;
+            padding: 10px;
         }
         .card-content {
             padding: 1.2rem;
             text-align: center;
+            width: 100%;
         }
         .card-content h3 {
             color: #2e1065;
@@ -137,14 +146,15 @@
             border-left: 1px solid #e9d5ff;
             border-right: 1px solid #e9d5ff;
             border-bottom: 1px solid #e9d5ff;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
         .location-card h3 {
             color: #3b0764;
-            margin-bottom: 0.8rem;
             font-size: 1.25rem;
         }
         .location-card p {
-            margin-bottom: 0.4rem;
             color: #475569;
         }
 
@@ -152,28 +162,39 @@
         .contact-box {
             background: linear-gradient(135deg, #3b0764, #2e1065);
             color: white;
-            padding: 2.5rem 1.5rem;
-            border-radius: 16px;
+            padding: 1.8rem 1rem;
+            border-radius: 12px;
             text-align: center;
             box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+            margin-top: auto;
         }
         .contact-box h2 {
             color: #4ade80;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
         }
         .contact-info {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1.5rem;
+            gap: 0.8rem;
+            margin-top: 1rem;
         }
         .contact-item {
-            font-size: 1.1rem;
+            font-size: 0.95rem;
             background: rgba(255, 255, 255, 0.1);
-            padding: 0.8rem 1.2rem;
+            padding: 0.6rem 1rem;
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .contact-item a:hover {
+            color: #4ade80;
+            text-decoration: underline;
         }
         
         footer {
@@ -204,8 +225,8 @@
                 <img src="./src/L.png" alt="Shop Logo" class="logo">
                 <div class="brand-text">
                     <h1>V.V Fruits</h1>
-                    <h2>Fruit Merchant & Comission Agent</h2>
-    <h3>Farm Fresh Fruits</h3>
+                    <h2>Fruit Merchant & Commission Agent</h2>
+                    <h3>Farm Fresh Fruits</h3>
                 </div>
             </div>
         </div>
@@ -228,19 +249,19 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./src/WAH.jpg" alt="WAH">
+                <img src="./src/WAH.jpg" alt="Water Apple Hybrid">
                 <div class="card-content">
                     <h3>Water Apple Hybrid</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/S.jpg" alt="STAR">
+                <img src="./src/S.jpg" alt="Star Fruit">
                 <div class="card-content">
                     <h3>Star Fruit</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/WAN.jpg" alt="WAN">
+                <img src="./src/WAN.jpg" alt="Water Apple Naadu">
                 <div class="card-content">
                     <h3>Water Apple Naadu</h3>
                 </div>
@@ -252,7 +273,7 @@
                 </div>
             </div>
             <div class="card">
-                <img src="./src/P.jpg" alt="Pambilimas">
+                <img src="./src/P.jpg" alt="Pamblimas">
                 <div class="card-content">
                     <h3>Pamblimas</h3>
                 </div>
@@ -265,53 +286,63 @@
             </div>
         </div>
 
-        <h2 class="section-title">Our 3 Locations</h2>
+        <h2 class="section-title">Our Locations</h2>
         <div class="locations-grid">
+            
             <div class="location-card">
-                <h3>Koyeambadu Branch</h3>
-                <p><strong>Address:</strong> Shop No. T/C 41, Anna Market</p>
-                <p><strong>Timing:</strong> 1:00 AM - 4:00 PM</p>
+                <div>
+                    <h3>Koyambedu Branch</h3>
+                    <p><strong>Address:</strong> Shop No. T/C 41, Anna Market</p>
+                    <p><strong>Timing:</strong> 1:00 AM - 4:00 PM</p>
+                </div>
                 <div class="contact-box">
-            <h2>Get In Touch</h2>
-            <p>For bulk orders, wholesale rates, or daily market prices:</p>
-            <div class="contact-info">
-                <div class="contact-item">📞 <strong>Phone:</strong> +91 9500661160</div>
-                <div class="contact-item">💬 <strong>WhatsApp:</strong> +919500661160</div>
-            </div>
+                    <h2>Get In Touch</h2>
+                    <p>For bulk orders or rates:</p>
+                    <div class="contact-info">
+                        <div class="contact-item">📞 <strong>Phone:</strong> <a href="tel:+919500661160">+91 9500661160</a></div>
+                        <div class="contact-item">💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919500661160" target="_blank">+91 9500661160</a></div>
+                    </div>
                 </div>
             </div>
+
             <div class="location-card">
-                <h3>Tenkasi Branch</h3>
-                <p><strong>Address:</strong> Aaindhu Mukku, R.c Chruch Opposite</p>
-                <p><strong>Timing:</strong> 7:00 AM - 10:30 PM</p>
-            </div>
-            <div class="contact-box">
-            <h2>Get In Touch</h2>
-            <p>For bulk orders, wholesale rates, or daily market prices:</p>
-            <div class="contact-info">
-                <div class="contact-item">📞 <strong>Phone:</strong> +91 9486452966</div>
-                <div class="contact-item">💬 <strong>WhatsApp:</strong> +91 9486452966</div>
-            </div>
-            </div>
-            <div class="location-card">
-                <h3>Kerala Branch</h3>
-                <p><strong>Address:</strong> Shop No. 45, Highway Junction</p>
-                <p><strong>Timing:</strong> 6:00 AM - 10:00 PM</p>
+                <div>
+                    <h3>Tenkasi Branch</h3>
+                    <p><strong>Address:</strong> Aaindhu Mukku, Opposite R.C. Church</p>
+                    <p><strong>Timing:</strong> 7:00 AM - 10:30 PM</p>
+                </div>
                 <div class="contact-box">
-            <h2>Get In Touch</h2>
-            <p>For bulk orders, wholesale rates, or daily market prices:</p>
-            <div class="contact-info">
-                <div class="contact-item">📞 <strong>Phone:</strong> ++919150488307</div>
-                <div class="contact-item">💬 <strong>WhatsApp:</strong>+919150488307</div>
-            </div>
+                    <h2>Get In Touch</h2>
+                    <p>For bulk orders or rates:</p>
+                    <div class="contact-info">
+                        <div class="contact-item">📞 <strong>Phone:</strong> <a href="tel:+919486452966">+91 9486452966</a></div>
+                        <div class="contact-item">💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919486452966" target="_blank">+91 9486452966</a></div>
+                    </div>
                 </div>
             </div>
+
+            <div class="location-card">
+                <div>
+                    <h3>Kerala Branch</h3>
+                    <p><strong>Address:</strong> Shop No. 45, Highway Junction</p>
+                    <p><strong>Timing:</strong> 6:00 AM - 10:00 PM</p>
+                </div>
+                <div class="contact-box">
+                    <h2>Get In Touch</h2>
+                    <p>For bulk orders or rates:</p>
+                    <div class="contact-info">
+                        <div class="contact-item">📞 <strong>Phone:</strong> <a href="tel:+919150488307">+91 9150488307</a></div>
+                        <div class="contact-item">💬 <strong>WhatsApp:</strong> <a href="https://wa.me/919150488307" target="_blank">+91 9150488307</a></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
         <div class="contact-box">
             <h2>Get In Touch Through Email</h2>
-            <div class="contact-info">
-                <div class="contact-item">✉️ <strong>Email:</strong> vvfruits.vino@gmail.com</div>
+            <div class="contact-info" style="flex-direction: row;">
+                <div class="contact-item">✉️ <strong>Email:</strong> <a href="mailto:vvfruits.vino@gmail.com">vvfruits.vino@gmail.com</a></div>
             </div>
         </div>
 
