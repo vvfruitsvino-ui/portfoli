@@ -39,7 +39,7 @@
             gap: 1.2rem;
         }
         
-        /* Logo Placeholder Styling (80% bigger: 70px -> 126px) */
+        /* Logo Placeholder Styling */
         .logo {
             width: 126px;
             height: 126px;
@@ -54,6 +54,10 @@
             color: white;
             box-shadow: 0 4px 6px rgba(0,0,0,0.2);
             object-fit: cover;
+            transition: opacity 0.2s;
+        }
+        .logo:hover {
+            opacity: 0.9;
         }
         .brand-text h1 {
             font-size: 2rem;
@@ -112,7 +116,9 @@
             width: 100%;
             height: 180px;
             object-fit: cover;
+            display: block;
         }
+
         .card-content {
             padding: 1.2rem;
             text-align: center;
@@ -145,6 +151,7 @@
             max-height: 500px;
             object-fit: contain;
             border-radius: 8px;
+            display: block;
         }
 
         /* Locations Section */
@@ -239,7 +246,9 @@
     <header>
         <div class="header-container">
             <div class="brand-wrapper">
-                <img src="./src/L.png" alt="Shop Logo" class="logo">
+                <a href="./src/L.png" target="_blank" title="View Logo">
+                    <img src="./src/L.png" alt="Shop Logo" class="logo">
+                </a>
                 <div class="brand-text">
                     <h1>V.V Fruits</h1>
                     <h2>Fruit Merchant & Commission Agent</h2>
@@ -254,59 +263,77 @@
         <h2 class="section-title">Our Fresh Produce</h2>
         <div class="grid">
             <div class="card">
-                <img src="./src/M.jpg" alt="Mangoostan">
+                <a href="./src/M.jpg" target="_blank" title="View Mangoostan">
+                    <img src="./src/M.jpg" alt="Mangoostan">
+                </a>
                 <div class="card-content">
                     <h3>Mangoostan</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/R.jpg" alt="Rambuttan">
+                <a href="./src/R.jpg" target="_blank" title="View Rambuttan">
+                    <img src="./src/R.jpg" alt="Rambuttan">
+                </a>
                 <div class="card-content">
                     <h3>Rambuttan</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/WAH.jpg" alt="Water Apple Hybrid">
+                <a href="./src/WAH.jpg" target="_blank" title="View Water Apple Hybrid">
+                    <img src="./src/WAH.jpg" alt="Water Apple Hybrid">
+                </a>
                 <div class="card-content">
                     <h3>Water Apple Hybrid</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/S.jpg" alt="Star Fruit">
+                <a href="./src/S.jpg" target="_blank" title="View Star Fruit">
+                    <img src="./src/S.jpg" alt="Star Fruit">
+                </a>
                 <div class="card-content">
                     <h3>Star Fruit</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/WAN.jpg" alt="Water Apple Naadu">
+                <a href="./src/WAN.jpg" target="_blank" title="View Water Apple Naadu">
+                    <img src="./src/WAN.jpg" alt="Water Apple Naadu">
+                </a>
                 <div class="card-content">
                     <h3>Water Apple Naadu</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/A.jpg" alt="Ayni">
+                <a href="./src/A.jpg" target="_blank" title="View Ayni">
+                    <img src="./src/A.jpg" alt="Ayni">
+                </a>
                 <div class="card-content">
                     <h3>Ayni</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/P.jpg" alt="Pamblimas">
+                <a href="./src/P.jpg" target="_blank" title="View Pamblimas">
+                    <img src="./src/P.jpg" alt="Pamblimas">
+                </a>
                 <div class="card-content">
                     <h3>Pamblimas</h3>
                 </div>
             </div>
             <div class="card">
-                <img src="./src/N.jpg" alt="Amla">
+                <a href="./src/N.jpg" target="_blank" title="View Amla">
+                    <img src="./src/N.jpg" alt="Amla">
+                </a>
                 <div class="card-content">
                     <h3>Amla</h3>
                 </div>
             </div>
-        </div>>
+        </div>
 
         <section class="gif-section">
             <h2 class="section-title">Highlights & Showcase</h2>
             <div class="gif-container">
-                <img src="./src/A.gif" alt="V.V Fruits Showcase GIF">
+                <a href="./src/A.gif" target="_blank" title="View Showcase GIF">
+                    <img src="./src/A.gif" alt="V.V Fruits Showcase GIF">
+                </a>
             </div>
         </section>
 
