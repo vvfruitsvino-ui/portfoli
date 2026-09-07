@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh Fruits & Wholesale</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body {
+            background-color: #f5f3ff;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header & Navigation Bar */
+        header {
+            background: linear-gradient(135deg, #2e1065, #4c1d95);
+            color: white;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        .header-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+        .brand-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+        
+        /* Logo Placeholder Styling */
+        .logo {
+            width: 70px;
+            height: 70px;
+            background-color: #16a34a;
+            border: 3px solid #4ade80;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            object-fit: cover;
+        }
+        .brand-text h1 {
+            font-size: 2rem;
+            color: #ffffff;
+            line-height: 1.2;
+        }
+        .brand-text p {
+            font-size: 0.95rem;
+            color: #ddd6fe;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2.5rem 1rem;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            color: #3b0764;
+            margin-bottom: 1.8rem;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #16a34a;
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+        
+        /* Fruits Gallery */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+        .card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #e9d5ff;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(76, 29, 149, 0.15);
+        }
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-content {
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .card-content h3 {
+            color: #2e1065;
+            font-size: 1.2rem;
+        }
+
+        /* Locations Section */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+        .location-card {
+            background: white;
+            padding: 1.8rem;
+            border-radius: 12px;
+            border-top: 5px solid #16a34a;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            border-left: 1px solid #e9d5ff;
+            border-right: 1px solid #e9d5ff;
+            border-bottom: 1px solid #e9d5ff;
+        }
+        .location-card h3 {
+            color: #3b0764;
+            margin-bottom: 0.8rem;
+            font-size: 1.25rem;
+        }
+        .location-card p {
+            margin-bottom: 0.4rem;
+            color: #475569;
+        }
+
+        /* Contact Section */
+        .contact-box {
+            background: linear-gradient(135deg, #3b0764, #2e1065);
+            color: white;
+            padding: 2.5rem 1.5rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+        .contact-box h2 {
+            color: #4ade80;
+            margin-bottom: 0.8rem;
+        }
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        .contact-item {
+            font-size: 1.1rem;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.8rem 1.2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background: #1e1b4b;
+            color: #c7d2fe;
+            font-size: 0.9rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 600px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .brand-wrapper {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="brand-wrapper">
+                <img src="https://via.placeholder.com/70/16a34a/ffffff?text=LOGO" alt="Shop Logo" class="logo">
+                <div class="brand-text">
+                    <h1>Fresh Fruit Traders</h1>
+                    <p>Premium Quality Fresh & Wholesale Fruits</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <h2 class="section-title">Our Fresh Produce</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&fit=crop&w=500&q=80" alt="Apples">
+                <div class="card-content">
+                    <h3>Fresh Apples</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1528825871115-3581a5387919?auto=format&fit=crop&w=500&q=80" alt="Bananas">
+                <div class="card-content">
+                    <h3>Premium Bananas</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1557800636-894a64c1696f?auto=format&fit=crop&w=500&q=80" alt="Oranges">
+                <div class="card-content">
+                    <h3>Juicy Oranges</h3>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1553279768-865429fa0078?auto=format&fit=crop&w=500&q=80" alt="Mangoes">
+                <div class="card-content">
+                    <h3>Seasonal Mangoes</h3>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">Our 3 Locations</h2>
+        <div class="locations-grid">
+            <div class="location-card">
+                <h3>Branch 1 - Market Outlet</h3>
+                <p><strong>Address:</strong> Shop No. 12, Main Wholesale Market</p>
+                <p><strong>Timing:</strong> 6:00 AM - 9:00 PM</p>
+            </div>
+            <div class="location-card">
+                <h3>Branch 2 - City Center</h3>
+                <p><strong>Address:</strong> Block B, Near Main Bus Stand</p>
+                <p><strong>Timing:</strong> 7:00 AM - 9:30 PM</p>
+            </div>
+            <div class="location-card">
+                <h3>Branch 3 - Express Store</h3>
+                <p><strong>Address:</strong> Shop No. 45, Highway Junction</p>
+                <p><strong>Timing:</strong> 6:00 AM - 10:00 PM</p>
+            </div>
+        </div>
+
+        <div class="contact-box">
+            <h2>Get In Touch</h2>
+            <p>For bulk orders, wholesale rates, or daily market prices:</p>
+            <div class="contact-info">
+                <div class="contact-item">📞 <strong>Phone:</strong> +91 98765 43210</div>
+                <div class="contact-item">💬 <strong>WhatsApp:</strong> +91 98765 43210</div>
+                <div class="contact-item">✉️ <strong>Email:</strong> contact@freshfruits.com</div>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fresh Fruit Traders. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
